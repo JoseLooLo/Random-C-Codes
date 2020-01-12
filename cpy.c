@@ -1,3 +1,8 @@
+/*
+* Nothing of Special
+* This code is just a little code for copy one file to another
+*/
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -16,7 +21,9 @@ void check_errors();
 
 #define BUFFER_SIZE 		4096
 #define TRUE 				1
-#define USER_PERMISSION_WRE 00700 //Código referente a permissão do usuario para ler, executar e escrever no arquivo
+#define USER_PERMISSION_WRE 00700 
+//The Code was set in FCNTL.h(? or UNISTD.h, I don't remember), is used to set the user permission.
+//00700 means the user can write, read and execute in the new file
 #define HELP_COMMAND 		"--help"
 
 
@@ -26,7 +33,7 @@ int main(int argc, char** argv){
 		exit_errors(0);
 	}
 		
-	if (argc != 3) exit_errors(1); //Faltam argumentos
+	if (argc != 3) exit_errors(1); //Missing arguments
 
 	char buffer[BUFFER_SIZE];
 	int file_in, file_out, read_count, write_count;
